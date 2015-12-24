@@ -8,7 +8,7 @@ $(BUNDLE): manifest.ttl visual_compressor.ttl visual_compressor.so visual_compre
 	cp $^ $(BUNDLE)
 
 visual_compressor.so: visual_compressor.cpp visual_compressor.peg
-	g++ -shared -fPIC -DPIC visual_compressor.cpp `pkg-config --cflags --libs lv2-plugin` -o visual_compressor.so
+	g++ -shared -fPIC -DPIC visual_compressor.cpp `pkg-config --cflags --libs lv2` -o visual_compressor.so
 
 visual_compressor_gui.so: visual_compressor_gui.cpp visual_compressor.peg
 	g++ -shared -fPIC -DPIC visual_compressor_gui.cpp `pkg-config --cflags --libs lv2-gui` -o visual_compressor_gui.so
